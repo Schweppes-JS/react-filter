@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 import "./PopupTable.css";
 
-const PopupTable = ({ isShowed = false, suboptions }) => {
+const PopupTable = ({ isShowed = false, suboptions, setSelectedOption }) => {
 	const [selectedSuboptions, setSelectedSuboptions] = useState([]);
 
 	const changeSelectedSuboption = (e, id) => {
@@ -18,6 +18,13 @@ const PopupTable = ({ isShowed = false, suboptions }) => {
 		}
 	};
 
+	const clearSelectedOptions = () => {
+		setSelectedSuboptions([]);
+		setSelectedOption(null);
+	};
+
+	const applyOptions = () => {};
+
 	return (
 		<ul className={`${isShowed ? "visible" : "hidden"} table`}>
 			{suboptions.map((option, index) => (
@@ -28,6 +35,14 @@ const PopupTable = ({ isShowed = false, suboptions }) => {
 					</label>
 				</li>
 			))}
+			<div className="table__controls">
+				<button className="table__button" onClick={clearSelectedOptions}>
+					Cancel
+				</button>
+				<button className="table__button" onClick={applyOptions}>
+					Apply
+				</button>
+			</div>
 		</ul>
 	);
 };

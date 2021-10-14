@@ -30,3 +30,24 @@
 .table__input {
 	display: none;
 }
+
+.table__controls {
+	display: flex;
+	grid-column: 1/-1;
+	justify-content: space-between;
+	margin-top: 10px;
+}
+
+.table__button {
+	background-color: transparent;
+	border: 1px solid var(--primary-color);
+	font-size: 1.5rem;
+	border-radius: 5px;
+	padding: 5px 10px;
+	cursor: pointer;
+	transition: box-shadow 0.2s;
+}
+
+.table__button:hover {
+	box-shadow: var(--dark-blue-shadow);
+}

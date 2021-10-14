@@ -8,7 +8,7 @@ const FilterOption = ({ setSelectedOption, suboptions, name, isSelected = false 
 		() => (
 			<li className="filter-option" onClick={() => setSelectedOption(name)}>
 				<p className={`${isSelected ? "highlight" : ""} filter-option__label`}>{name}</p>
-				<PopupTable isShowed={isSelected} suboptions={suboptions} />
+				<PopupTable isShowed={isSelected} suboptions={suboptions} setSelectedOption={setSelectedOption} />
 			</li>
 		),
 		[isSelected]
