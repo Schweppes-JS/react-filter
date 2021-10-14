@@ -1,0 +1,10 @@
+.filter {
+	display: flex;
+	list-style: none;
+	padding: 10px;
+	gap: 15px;
+	border: 1px solid #089ee3;
+	margin-top: 50px;
+	border-radius: 5px;
+	box-shadow: var(--dark-blue-shadow);
+}

@@ -1,3 +1,27 @@
-body {
+:root {
+	--primary-color: #05a1e0;
+	--secondary-color: #2252bd;
+	--highlight-color: #e03c3c;
+	--dark-blue-shadow: 0 0 5px 1px rgba(0, 32, 69, 0.3);
+}
+
+* {
 	margin: 0;
+	padding: 0;
+}
+
+body {
+	font-family: "Ubuntu", sans-serif;
+}
+
+.highlight {
+	border: 1px solid var(--highlight-color);
+}
+
+.visible {
+	visibility: visible;
+}
+
+.hidden {
+	visibility: hidden;
 }

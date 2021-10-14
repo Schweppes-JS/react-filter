@@ -1,0 +1,17 @@
+.filter-option {
+	position: relative;
+	font-size: 1.5rem;
+	text-transform: capitalize;
+}
+
+.filter-option__label {
+	padding: 5px 10px;
+	border-radius: 5px;
+	cursor: pointer;
+	border: 1px solid var(--secondary-color);
+	transition: box-shadow 0.2s;
+}
+
+.filter-option__label:hover {
+	box-shadow: var(--dark-blue-shadow);
+}

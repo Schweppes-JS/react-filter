@@ -1,0 +1,32 @@
+.table {
+	position: absolute;
+	border: 1px solid;
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 10px;
+	border-radius: 5px;
+	top: calc(100% + 20px);
+	padding: 10px;
+	left: 0;
+}
+
+.table__option {
+	display: flex;
+}
+
+.table__label {
+	flex: 1;
+	border: 1px solid var(--secondary-color);
+	border-radius: 5px;
+	padding: 5px 10px;
+	transition: box-shadow 0.2s;
+	white-space: nowrap;
+}
+
+.table__label:hover {
+	box-shadow: var(--dark-blue-shadow);
+}
+
+.table__input {
+	display: none;
+}
