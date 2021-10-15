@@ -1,4 +1,4 @@
-import React, { useMemo, useState } from "react";
+import React, { useMemo } from "react";
 
 import PopupTable from "../PopupTable/PopupTable";
 import "./FilterOption.css";
@@ -9,7 +9,7 @@ const FilterOption = ({ setSelectedOption, suboptions, name, isSelected, dispatc
 			<li className="filter-option">
 				<p className={`${isSelected ? "highlight" : ""} filter-option__label`} onClick={() => setSelectedOption(name)}>
 					{name}
-					<span className={`${appliedSuboptions.length > 0 ? "visible" : "hidden"}`}>({appliedSuboptions.length})</span>
+					{appliedSuboptions.length > 0 && <span>({appliedSuboptions.length})</span>}
 				</p>
 				<PopupTable
 					optionName={name}

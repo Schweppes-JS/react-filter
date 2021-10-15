@@ -3,10 +3,6 @@ import React from "react";
 import "./AppliedFilters.css";
 
 const AppliedFilters = ({ appliedSuboptions, dispatchSuboption }) => {
-	console.log(Object.keys(appliedSuboptions).find((option) => appliedSuboptions[option].length));
-
-	const removeSuboption = () => {};
-
 	return (
 		<section className="applied-filters">
 			<h3 className="applied-filters__title">Applied Filters:</h3>

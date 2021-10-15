@@ -7,11 +7,13 @@
 
 .applied-filters__title {
 	font-weight: 2rem;
+	width: min-content;
 }
 
 .applied-filters__list {
 	list-style: none;
 	display: flex;
+	flex-wrap: wrap;
 	gap: 5px;
 }
 
@@ -21,7 +23,7 @@
 	padding: 5px 10px;
 	border: 1px solid var(--secondary-color);
 	border-radius: 5px;
-	font-size: 1.5rem;
+	font-size: 1.3rem;
 	transition: box-shadow 0.2s;
 }
 
@@ -66,4 +68,11 @@
 
 .applied-filters__line:last-child {
 	transform: rotate(-45deg);
+}
+
+@media screen and (max-width: 1024px) {
+	.applied-filters__suboption {
+		font-size: 1rem;
+		padding: 5px;
+	}
 }

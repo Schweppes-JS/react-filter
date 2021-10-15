@@ -1,10 +1,35 @@
 .filter {
+	position: relative;
 	display: flex;
 	list-style: none;
+	flex-wrap: wrap;
 	padding: 10px;
 	gap: 15px;
 	border: 1px solid #089ee3;
 	margin-top: 50px;
 	border-radius: 5px;
 	box-shadow: var(--dark-blue-shadow);
+}
+
+.filter__list {
+	position: absolute;
+	display: none;
+}
+
+@media screen and (max-width: 1024px) {
+	.filter {
+		margin-top: 30px;
+		padding: 5px;
+		gap: 10px;
+	}
+}
+
+@media screen and (max-width: 1024px) {
+	.filter {
+		justify-content: space-between;
+	}
+
+	.filter > li {
+		flex: 1;
+	}
 }

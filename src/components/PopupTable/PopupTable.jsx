@@ -30,8 +30,9 @@ const PopupTable = ({ isShowed = false, suboptions, setSelectedOption, dispatchS
 
 	return (
 		<ul className={`${isShowed ? "visible" : "hidden"} table`}>
+			<div className="table__triangle"></div>
 			{suboptions.map((suboption, index) => (
-				<li className="table__option" key={suboption.title + index}>
+				<li className="table__suboption" key={suboption.title + index}>
 					<label
 						className={`${
 							selectedSuboptions.find((selectedSuboption) => suboption.id === selectedSuboption.id) ? "highlight" : ""

@@ -21,8 +21,13 @@ body {
 
 .visible {
 	visibility: visible;
+	max-height: 350px;
+	opacity: 1;
 }
 
 .hidden {
 	visibility: hidden;
+	padding: 0;
+	opacity: 0;
+	max-height: 0px;
 }
