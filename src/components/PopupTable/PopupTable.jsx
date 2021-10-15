@@ -1,42 +1,52 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 import "./PopupTable.css";
 
-const PopupTable = ({ isShowed = false, suboptions, setSelectedOption }) => {
+const PopupTable = ({ isShowed = false, suboptions, setSelectedOption, dispatchSuboption, optionName, appliedSuboptions }) => {
+	useEffect(() => {
+		setSelectedSuboptions(appliedSuboptions);
+	}, [appliedSuboptions]);
+
 	const [selectedSuboptions, setSelectedSuboptions] = useState([]);
 
-	const changeSelectedSuboption = (e, id) => {
+	const changeSelectedSuboption = (e, suboption) => {
 		if (e.target.checked) {
-			setSelectedSuboptions([...selectedSuboptions, id]);
+			setSelectedSuboptions([...selectedSuboptions, { ...suboption }]);
 		} else {
-			const optionIndex = selectedSuboptions.indexOf(id);
-			if (optionIndex > -1) {
-				const reducedArray = [...selectedSuboptions];
-				reducedArray.splice(optionIndex, 1);
-				setSelectedSuboptions(reducedArray);
-			}
+			setSelectedSuboptions(selectedSuboptions.filter((item) => item.id !== suboption.id));
 		}
 	};
 
 	const clearSelectedOptions = () => {
+		dispatchSuboption({ type: "SET_SELECTED_SUBOPTION", payload: { option: optionName, suboptions: [] } });
 		setSelectedSuboptions([]);
 		setSelectedOption(null);
 	};
 
-	const applyOptions = () => {};
+	function applyOptions() {
+		dispatchSuboption({ type: "SET_SELECTED_SUBOPTION", payload: { option: optionName, suboptions: selectedSuboptions } });
+		setSelectedOption(null);
+	}
 
 	return (
 		<ul className={`${isShowed ? "visible" : "hidden"} table`}>
-			{suboptions.map((option, index) => (
-				<li className="table__option" key={option.title + index}>
-					<label className={`${selectedSuboptions.includes(option.id) ? "highlight" : ""} table__label`}>
-						<input className="table__input" type="checkbox" onChange={(e) => changeSelectedSuboption(e, option.id)} />
-						{option.title}
+			{suboptions.map((suboption, index) => (
+				<li className="table__option" key={suboption.title + index}>
+					<label
+						className={`${
+							selectedSuboptions.find((selectedSuboption) => suboption.id === selectedSuboption.id) ? "highlight" : ""
+						} table__label`}
+					>
+						<input className="table__input" type="checkbox" onChange={(e) => changeSelectedSuboption(e, suboption)} />
+						{suboption.title}
 					</label>
 				</li>
 			))}
 			<div className="table__controls">
-				<button className="table__button" onClick={clearSelectedOptions}>
+				<button
+					className={`${selectedSuboptions.length > 0 && isShowed ? "visible" : "hidden"} table__button`}
+					onClick={clearSelectedOptions}
+				>
 					Cancel
 				</button>
 				<button className="table__button" onClick={applyOptions}>

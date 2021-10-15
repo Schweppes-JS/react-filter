@@ -1,4 +1,7 @@
 .headline__logo {
 	object-fit: cover;
 	width: 100%;
+	border-bottom-left-radius: 5px;
+	border-bottom-right-radius: 5px;
+	box-shadow: var(--dark-blue-shadow);
 }

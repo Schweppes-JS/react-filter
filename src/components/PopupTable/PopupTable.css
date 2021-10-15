@@ -1,6 +1,6 @@
 .table {
 	position: absolute;
-	border: 1px solid;
+	border: 1px solid var(--primary-color);
 	display: grid;
 	grid-template-columns: repeat(3, 1fr);
 	gap: 10px;
@@ -21,6 +21,7 @@
 	padding: 5px 10px;
 	transition: box-shadow 0.2s;
 	white-space: nowrap;
+	cursor: pointer;
 }
 
 .table__label:hover {
