@@ -1,78 +1,84 @@
 .applied-filters {
-	align-items: center;
-	display: flex;
-	margin-top: 400px;
-	gap: 10px;
+  align-items: center;
+  display: flex;
+  margin-top: 400px;
+  gap: 10px;
 }
 
 .applied-filters__title {
-	font-weight: 2rem;
-	width: min-content;
+  font-weight: 2rem;
+  width: min-content;
 }
 
 .applied-filters__list {
-	list-style: none;
-	display: flex;
-	flex-wrap: wrap;
-	gap: 5px;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
 }
 
 .applied-filters__suboption {
-	display: flex;
-	gap: 5px;
-	padding: 5px 10px;
-	border: 1px solid var(--secondary-color);
-	border-radius: 5px;
-	font-size: 1.3rem;
-	transition: box-shadow 0.2s;
+  display: flex;
+  gap: 5px;
+  padding: 5px 10px;
+  border: 1px solid var(--secondary-color);
+  border-radius: 5px;
+  font-size: 1.3rem;
+  transition: box-shadow 0.2s;
 }
 
 .applied-filters__button {
-	cursor: pointer;
+  cursor: pointer;
 }
 
 .applied-filters__suboption:hover {
-	box-shadow: var(--dark-blue-shadow);
+  box-shadow: var(--dark-blue-shadow);
 }
 
 .applied-filters__notification {
-	font-size: 1.3rem;
-	letter-spacing: -1px;
+  font-size: 1.3rem;
+  letter-spacing: -1px;
 }
 
 .applied-filters__cross {
-	cursor: pointer;
-	display: inline-flex;
-	justify-content: center;
-	flex-direction: column;
-	height: 15px;
-	width: 15px;
-	transition: transform 0.2s;
+  cursor: pointer;
+  display: inline-flex;
+  justify-content: center;
+  flex-direction: column;
+  height: 15px;
+  width: 15px;
+  transition: transform 0.2s;
 }
 
 .applied-filters__cross:hover {
-	transform: scale(1.2);
+  transform: scale(1.2);
 }
 
 .applied-filters__line {
-	display: block;
-	height: 2px;
-	width: 15px;
-	background-color: var(--primary-color);
+  display: block;
+  height: 2px;
+  width: 15px;
+  background-color: var(--primary-color);
 }
 
 .applied-filters__line:first-child {
-	margin-bottom: -2px;
-	transform: rotate(45deg);
+  margin-bottom: -2px;
+  transform: rotate(45deg);
 }
 
 .applied-filters__line:last-child {
-	transform: rotate(-45deg);
+  transform: rotate(-45deg);
 }
 
 @media screen and (max-width: 1024px) {
-	.applied-filters__suboption {
-		font-size: 1rem;
-		padding: 5px;
-	}
+  .applied-filters__suboption {
+    font-size: 1rem;
+    padding: 5px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .applied-filters {
+    margin-top: 475px;
+  }
 }

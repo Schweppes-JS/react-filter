@@ -1,0 +1,35 @@
+.accordion-option {
+  padding: 10px 0;
+  border-bottom: 1px solid var(--secondary-color);
+  position: relative;
+}
+
+.accordion-option > ul {
+  position: static;
+  border: none;
+}
+
+.accordion-option > ul > div:first-child {
+  display: none;
+}
+
+.accordion-option:last-child {
+  border-bottom: none;
+}
+
+.accordion-option__title {
+  width: 100%;
+  display: inline-flex;
+  justify-content: space-between;
+  font-size: 1.3rem;
+  text-transform: capitalize;
+  cursor: pointer;
+}
+
+.accordion-option__symbol {
+  transition: transform 0.2s;
+}
+
+.accordion-option__title:hover .accordion-option__symbol {
+  transform: scale(1.5);
+}

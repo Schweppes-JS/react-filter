@@ -42,7 +42,6 @@ const Filter = () => {
 								suboptions={data[name]}
 								selectedOption={selectedOption}
 								isSelected={selectedOption === name}
-								appliedSuboptions={appliedSuboptions}
 								setSelectedOption={setSelectedOption}
 								dispatchSuboption={dispatchSuboption}
 								appliedSuboptions={appliedSuboptions[name]}
@@ -71,7 +70,6 @@ const Filter = () => {
 				suboptions={data[name]}
 				selectedOption={selectedOption}
 				isSelected={selectedOption === name}
-				appliedSuboptions={appliedSuboptions}
 				setSelectedOption={setSelectedOption}
 				dispatchSuboption={dispatchSuboption}
 				appliedSuboptions={appliedSuboptions[name]}
