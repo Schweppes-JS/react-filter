@@ -50,8 +50,8 @@ const Filter = () => {
 				)}
 				<li className="filter__accordion">
 					<Accordion
-						options={options}
 						data={data}
+						options={options}
 						selectedOption={selectedOption}
 						appliedSuboptions={appliedSuboptions}
 						setSelectedOption={setSelectedOption}

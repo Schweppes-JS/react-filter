@@ -31,3 +31,9 @@ body {
 	opacity: 0;
 	max-height: 0px;
 }
+
+@media screen and (max-width: 768px) {
+	.visible {
+		max-height: 550px;
+	}
+}

@@ -1,30 +1,44 @@
-import React, { useState } from "react";
-import AccordionOption from "../AccordionOption/AccordionOption";
+import React, { useEffect, useState } from "react";
 
+import AccordionOption from "../AccordionOption/AccordionOption";
+import FilterOption from "../FilterOption/FilterOption";
 import "./Accordion.css";
 
-const Accordion = ({ options, data, selectedOption, appliedSuboptions, setSelectedOption, dispatchSuboption }) => {
+const Accordion = ({ options, data, selectedOption, setSelectedOption, appliedSuboptions, dispatchSuboption }) => {
+	const [isAccordionVisible, setAccordionVisibility] = useState(false);
+	console.log(isAccordionVisible);
 
 	const changeVisibility = () => {
-		setSelectedOption("more");
+		setAccordionVisibility(!isAccordionVisible);
+		setSelectedOption(null);
 	};
+
+	useEffect(() => {
+		(selectedOption === options[0] || selectedOption === options[1]) && setAccordionVisibility(false);
+	}, [selectedOption]);
 
 	return (
 		<>
-			<p className={`${selectedOption === "more" ? "highlight" : ""} accordion__label`} onClick={changeVisibility}>
+			<p className={`${isAccordionVisible ? "highlight" : ""} accordion__label`} onClick={changeVisibility}>
 				More Filters
 			</p>
-			<ul className={`${selectedOption === "more" ? "visible" : "hidden"} accordion__list`}>
+			<ul className={`${isAccordionVisible ? "visible" : "hidden"} accordion__list`}>
 				<div className="accordion__triangle"></div>
 				{options.map(
-					(name, index) => index >= 2 && 
-					<AccordionOption 
-						name={name}
-						key={name + index}
-						suboptions={data[name]}
-						dispatchSuboption={dispatchSuboption}
-						appliedSuboptions={appliedSuboptions[name]}
-					/>
+					(name, index) =>
+						index >= 2 && (
+							<FilterOption
+								name={name}
+								isAccordion
+								key={name + index}
+								suboptions={data[name]}
+								selectedOption={selectedOption}
+								isSelected={selectedOption === name}
+								setSelectedOption={setSelectedOption}
+								dispatchSuboption={dispatchSuboption}
+								appliedSuboptions={appliedSuboptions[name]}
+							/>
+						)
 				)}
 			</ul>
 		</>
