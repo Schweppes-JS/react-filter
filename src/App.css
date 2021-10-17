@@ -13,6 +13,24 @@
 
 body {
 	font-family: "Ubuntu", sans-serif;
+	min-width: 100vw;
+}
+
+::-webkit-scrollbar {
+	width: 7px;
+}
+
+::-webkit-scrollbar-track {
+	background: var(--primary-color);
+}
+
+::-webkit-scrollbar-thumb {
+	border-radius: 10px;
+	background: var(--);
+}
+
+::-webkit-scrollbar-thumb:hover {
+	background: var(--color-light-blue);
 }
 
 .highlight {

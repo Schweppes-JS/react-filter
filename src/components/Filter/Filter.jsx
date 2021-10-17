@@ -1,29 +1,12 @@
 import React, { useState, useReducer } from "react";
 
+import { initialSuboptionsState, options, suboptionsReducer } from "../../helpers/functions/reducers";
 import { useDeviceDetect } from "../../helpers/hooks/deviceDetector";
 import AppliedFilters from "../AplliedFilters/AppliedFilters";
 import FilterOption from "../FilterOption/FilterOption";
 import Accordion from "../Accordion/Accordion";
 import data from "../../assets/data.json";
 import "./Filter.css";
-
-const options = Object.keys(data);
-const initialSuboptionsState = options.reduce((accumulate, current) => ({ ...accumulate, [current]: [] }), {});
-const suboptionsReducer = (state, action) => {
-	switch (action.type) {
-		case "SET_SELECTED_SUBOPTION":
-			return { ...state, [action.payload.option]: action.payload.suboptions };
-		case "REMOVE_ITEM":
-			return {
-				...state,
-				[action.payload.option]: state[action.payload.option].filter((item) => item.id !== action.payload.suboption.id),
-			};
-		case "CLEAR_STATE":
-			return initialSuboptionsState;
-		default:
-			return state;
-	}
-};
 
 const Filter = () => {
 	const [appliedSuboptions, dispatchSuboption] = useReducer(suboptionsReducer, initialSuboptionsState);
@@ -78,10 +61,7 @@ const Filter = () => {
 
 	return (
 		<>
-			<div className="container">
-				<ul className="filter">{isMobile ? mobileTemplate() : desktopTemplate()}</ul>
-			</div>
-			{isMobile && <div></div>}
+			<ul className="filter">{isMobile ? mobileTemplate() : desktopTemplate()}</ul>
 			<AppliedFilters appliedSuboptions={appliedSuboptions} dispatchSuboption={dispatchSuboption} />
 		</>
 	);

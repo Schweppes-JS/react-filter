@@ -1,12 +1,10 @@
 import React, { useEffect, useState } from "react";
 
-import AccordionOption from "../AccordionOption/AccordionOption";
 import FilterOption from "../FilterOption/FilterOption";
 import "./Accordion.css";
 
 const Accordion = ({ options, data, selectedOption, setSelectedOption, appliedSuboptions, dispatchSuboption }) => {
 	const [isAccordionVisible, setAccordionVisibility] = useState(false);
-	console.log(isAccordionVisible);
 
 	const changeVisibility = () => {
 		setAccordionVisibility(!isAccordionVisible);
@@ -28,8 +26,8 @@ const Accordion = ({ options, data, selectedOption, setSelectedOption, appliedSu
 					(name, index) =>
 						index >= 2 && (
 							<FilterOption
+								isMobile
 								name={name}
-								isAccordion
 								key={name + index}
 								suboptions={data[name]}
 								selectedOption={selectedOption}

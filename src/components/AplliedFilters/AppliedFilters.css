@@ -1,7 +1,7 @@
 .applied-filters {
 	align-items: center;
 	display: flex;
-	margin-top: 400px;
+	margin-top: auto;
 	gap: 10px;
 }
 
@@ -79,6 +79,6 @@
 
 @media screen and (max-width: 768px) {
 	.applied-filters {
-		margin-top: 575px;
+		margin-top: auto;
 	}
 }

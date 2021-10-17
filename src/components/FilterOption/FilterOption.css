@@ -37,12 +37,6 @@
 	.filter-option__label {
 		padding: 5px;
 	}
-
-	.filter-option:nth-child(5) > ul,
-	.filter-option:nth-child(5) > ul > div:first-child {
-		left: 0;
-		right: unset;
-	}
 }
 
 @media screen and (max-width: 768px) {

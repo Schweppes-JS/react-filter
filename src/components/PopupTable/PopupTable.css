@@ -97,3 +97,12 @@
 		right: 0;
 	}
 }
+
+@media screen and (max-width: 450px) {
+	.table {
+		top: 140%;
+		left: 0;
+		right: 0;
+		grid-template-columns: auto auto;
+	}
+}
