@@ -82,3 +82,23 @@
 		margin-top: auto;
 	}
 }
+
+@media screen and (max-width: 450px) {
+	.applied-filters__suboption {
+		font-size: 14px;
+		gap: 1px;
+		padding: 3px;
+	}
+
+	.applied-filters__cross {
+		height: 10px;
+		width: 10px;
+	}
+
+	.applied-filters__line {
+		display: block;
+		height: 2px;
+		width: 10px;
+		background-color: var(--primary-color);
+	}
+}
