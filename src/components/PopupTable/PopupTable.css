@@ -1,108 +1,108 @@
 .table {
-	position: absolute;
-	border: 1px solid var(--primary-color);
-	display: grid;
-	grid-template-columns: repeat(3, 1fr);
-	gap: 10px;
-	border-radius: 5px;
-	top: calc(100% + 20px);
-	max-height: 0px;
-	padding: 10px;
-	left: 0;
-	transition: max-height 0.2s, padding 0.3s;
+  position: absolute;
+  border: 1px solid var(--primary-color);
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  border-radius: 5px;
+  top: calc(100% + 20px);
+  max-height: 0px;
+  padding: 10px;
+  left: 0;
+  transition: max-height 0.2s, padding 0.3s;
 }
 
 .table__triangle {
-	width: 30px;
-	height: 30px;
-	transform: rotate(45deg) translateY(-75%);
-	position: absolute;
-	border-top: 1px solid var(--primary-color);
-	border-left: 1px solid var(--primary-color);
+  width: 30px;
+  height: 30px;
+  transform: rotate(45deg) translateY(-75%);
+  position: absolute;
+  border-top: 1px solid var(--primary-color);
+  border-left: 1px solid var(--primary-color);
 }
 
 .table__triangle:after {
-	position: absolute;
-	content: "";
-	width: 30px;
-	height: 30px;
-	background-color: white;
-	z-index: -1;
+  position: absolute;
+  content: "";
+  width: 30px;
+  height: 30px;
+  background-color: white;
+  z-index: -1;
 }
 
 .table__suboption {
-	display: flex;
-	z-index: 1;
+  display: flex;
+  z-index: 1;
 }
 
 .table__label {
-	font-size: 1.3rem;
-	flex: 1;
-	border: 1px solid var(--secondary-color);
-	border-radius: 5px;
-	padding: 5px 10px;
-	transition: box-shadow 0.2s;
-	white-space: nowrap;
-	cursor: pointer;
+  font-size: 1.3rem;
+  flex: 1;
+  border: 1px solid var(--secondary-color);
+  border-radius: 5px;
+  padding: 5px 10px;
+  transition: box-shadow 0.2s;
+  white-space: nowrap;
+  cursor: pointer;
 }
 
 .table__label:hover {
-	box-shadow: var(--dark-blue-shadow);
+  box-shadow: var(--dark-blue-shadow);
 }
 
 .table__input {
-	display: none;
+  /* display: none; */
 }
 
 .table__controls {
-	display: flex;
-	grid-column: 1/-1;
-	justify-content: space-between;
-	margin-top: 10px;
+  display: flex;
+  grid-column: 1/-1;
+  justify-content: space-between;
+  margin-top: 10px;
 }
 
 .table__button {
-	background-color: transparent;
-	border: 1px solid var(--primary-color);
-	font-size: 1.5rem;
-	border-radius: 5px;
-	padding: 5px 10px;
-	cursor: pointer;
-	transition: box-shadow 0.2s;
+  background-color: transparent;
+  border: 1px solid var(--primary-color);
+  font-size: 1.5rem;
+  border-radius: 5px;
+  padding: 5px 10px;
+  cursor: pointer;
+  transition: box-shadow 0.2s;
 }
 
 .table__button:hover {
-	box-shadow: var(--dark-blue-shadow);
+  box-shadow: var(--dark-blue-shadow);
 }
 
 @media screen and (max-width: 1024px) {
-	.table {
-		padding: 5px;
-		gap: 5px;
-	}
+  .table {
+    padding: 5px;
+    gap: 5px;
+  }
 
-	.table__label {
-		font-size: 1rem;
-	}
+  .table__label {
+    font-size: 1rem;
+  }
 
-	.table__button {
-		font-size: 1.1rem;
-	}
+  .table__button {
+    font-size: 1.1rem;
+  }
 }
 
 @media screen and (max-width: 768px) {
-	.table {
-		top: 140%;
-		left: 0;
-		right: 0;
-	}
+  .table {
+    top: 140%;
+    left: 0;
+    right: 0;
+  }
 }
 
 @media screen and (max-width: 450px) {
-	.table {
-		top: 140%;
-		left: 0;
-		right: 0;
-		grid-template-columns: auto auto;
-	}
+  .table {
+    top: 140%;
+    left: 0;
+    right: 0;
+    grid-template-columns: auto auto;
+  }
 }
