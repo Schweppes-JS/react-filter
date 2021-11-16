@@ -1,3 +1,11 @@
+## Demo
+
+![print](./demo.gif)
+
+## Live page
+
+https://schweppes-js.github.io/react-filter/dist
+
 ## Available Scripts
 
 In the project directory, you can run:
